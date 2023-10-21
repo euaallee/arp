@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atvd7.js</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>RESULTADO:</h1>
+    <form action="#">
+        <label for="menu">Selecione uma opção</label><br>
+        <input type="text" name="menu" id="optMenu" value="">
+        <br>
+        <button type="button" id="enviar" value="Enviar">ENVIAR</button>
+        <div class="resultado" id="resultado"></div>
+    </form>
+    <h1>CÓDIGO:</h1>
+    <textarea name="" id="" cols="150" rows="30">
+        var enviar = document.getElementById('enviar');
+        var resultado = document.getElementById('resultado');
+
+        let listaPacientes = [];
+        let nomePacientes = [];
+
+        function pacientes(nome, idade, peso, altura) {
+            let paciente = {
+                nome: nome,
+                idade: idade,
+                peso: peso,
+                altura: altura
+            };
+            listaPacientes.push(paciente);
+            resultado = JSON.stringify(paciente);
+            return resultado;
+        }
+
+        function nomesPacientes() {
+            for (nomePaciente of listaPacientes) {
+                nomePacientes.push(nomePaciente.nome);
+            }
+            return nomePacientes;
+        }
+
+        enviar.addEventListener("click", function (event) {
+            let valorMenu = Number(document.getElementById('optMenu').value);
+            switch (valorMenu) {
+                case 1:
+                    let nome = prompt("Nome paciente: ");
+                    let idade = prompt("Idade paciente: ");
+                    let peso = prompt("Peso paciente: ");
+                    let altura = prompt("Altura paciente: ");
+                    lista = pacientes(nome, idade, peso, altura);
+                    document.getElementById('resultado').innerHTML = lista;
+                    break;
+                case 2:
+                    document.getElementById('resultado').innerHTML = nomesPacientes().join(", ");
+                    break;
+                default:
+                    alert("Option Invalid!")
+                    break;
+            }
+        });
+    </textarea>
+    <script src="atvd7.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atvd5.js</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>CÓDIGO</h1>
+    <textarea name="" id="" cols="150" rows="30">
+        let numPensado = Math.floor(Math.random() * 11)
+        let numEscolhido = Number(prompt("advinhe o número que estou pensando? Está entre 0 e 10: "))
+        let acertos = 0
+        
+        for(let i = 0; i < 100; i++){
+            if(numEscolhido == numPensado){
+                acertos += i
+                alert("Acertou!")
+                break
+            } else {
+                numEscolhido = Number(prompt("Não foi dessa vez! Tente novamente: "))
+            }
+        }
+        
+        alert(`Parabéns! Você advinhou o número em ${acertos} tentativas`)
+    </textarea>
+    <script src="atvd5.js"></script>
+</body>
+</html>

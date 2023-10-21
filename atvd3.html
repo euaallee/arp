@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atvd3.js</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CÓDIGO</h1>
+    <textarea name="" id="" cols="150" rows="30">
+        let nomeAluno = prompt("Nome: ")
+        let notaAluno = Number(prompt("Insira a nota: "))
+        
+        function mediaAluno(nome, nota) {
+            if (nota >= 7) {
+                alert(`Parabêns ${nome}! Você passou com ${nota}`)
+            } else {
+                alert(`Não foi dessa fez ${nome}! Você não passou com a nota ${nota}, na proxima vez você consegues. Forças guerreiro.`)
+            }
+        
+        }
+        
+        mediaAluno(nomeAluno, notaAluno)
+    </textarea>
+    <script src="atvd3.js"></script>
+</body>
+
+</html>
